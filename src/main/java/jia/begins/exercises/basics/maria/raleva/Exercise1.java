@@ -1,4 +1,5 @@
-package jia.begins.examples.basics.maria.raleva;
+package jia.begins.exercises.basics.maria.raleva;
+
 
 import java.io.PrintWriter;
 import java.text.NumberFormat;
