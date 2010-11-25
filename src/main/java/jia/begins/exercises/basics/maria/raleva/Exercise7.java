@@ -22,7 +22,6 @@ import java.util.Random;
 abstract class Shape{
     abstract public double perimeter();
     abstract public double area();
-
 }
 
 /**
@@ -30,8 +29,7 @@ abstract class Shape{
  * Overrides methods perimeter(), area() and toString
  */
 class Circle extends Shape{
-     public static final double PI = 3.14159265358979323846;
-    
+     
      private double radius;
 
     Circle(double radius) {
@@ -48,7 +46,7 @@ class Circle extends Shape{
      */
     @Override
     public double perimeter(){
-          return 2*PI*radius;
+          return 2*Math.PI*radius;
     }
 
     /**
@@ -57,7 +55,7 @@ class Circle extends Shape{
      */
     @Override
     public double area(){
-          return radius*radius*PI;
+          return radius*radius*Math.PI;
     }
 
     /**
@@ -65,7 +63,7 @@ class Circle extends Shape{
      */
     @Override
     public String toString(){
-        return String.format("Shape Circle:%n Radius = %s%n", radius);
+        return String.format("Shape Circle:\n Radius = %s\n", radius);
     }
 
 }
@@ -113,7 +111,7 @@ class Rectangle extends Shape{
      */
     @Override
     public String toString() {
-         return String.format("Shape Rectangle:%n Height = %s%n Width = %s%n", height, width);
+         return String.format("Shape Rectangle:\n Height = %s\n Width = %s\n", height, width);
     }
 }
 /**
@@ -136,7 +134,7 @@ class Square extends Rectangle{
      */
     @Override
     public String toString(){
-        return String.format("Shape Square:%n Length of the side = %s%n", lengthOfSide);
+        return String.format("Shape Square:\n Length of the side = %s\n", lengthOfSide);
     }
 
 }
@@ -155,11 +153,11 @@ public class Exercise7 {
         for(int i = 0;i<10;++i){
             intNumber = r.nextInt(3); //random number(0..2)
             if(intNumber == 0){       //Circle element
-                arrayOfShapes[i]= new Circle(r.nextDouble());
+                arrayOfShapes[i]= new Circle(r.nextDouble()*100);
             }else if(intNumber == 1){ //Rectangle element
-                arrayOfShapes[i] = new Rectangle(r.nextDouble(),r.nextDouble());
+                arrayOfShapes[i] = new Rectangle(r.nextDouble()*100,r.nextDouble()*100);
             }else {                   //Square element
-                arrayOfShapes[i] = new Square(r.nextDouble());
+                arrayOfShapes[i] = new Square(r.nextDouble()*100);
             }
         } //end for
         //Print area and perimeter for each element into the array
